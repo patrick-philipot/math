@@ -70,11 +70,11 @@ class Raven {
     this.color = 'rgb(' + this.randomColor[0] + ',' + this.randomColor[1] + ',' + this.randomColor[2] + ')' ;
   }
   update(deltatime) {
-    console.log(`deltatime raven = ${deltatime}`);
+    // console.log(`deltatime raven = ${deltatime}`);
     if (this.y < 0 || this.y > canvas.height - this.height){
       this.directionY = -this.directionY;
     }
-    console.log(`directionX = ${this.directionX}`);
+    // console.log(`directionX = ${this.directionX}`);
     this.x -= this.directionX;
     this.y += this.directionY;
     if (this.x < 0 - this.width) this.markedForDeletion = true;
@@ -159,6 +159,7 @@ function handleGameOver() {
     dialWin.showModal()
     dialWin.addEventListener('close', (e) => {
       //console.log('Return value:', 'Win');
+      //window.location.replace(location.pathname);
       location.reload()
     });
   }  else {
@@ -172,7 +173,7 @@ function handleGameOver() {
   // startPlaying()
 }
 
-window.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {
   const detectPixelColor = collisionCtx.getImageData(e.x, e.y, 1, 1);
   const pc = detectPixelColor.data;
   ravens.forEach(object => {
@@ -249,5 +250,9 @@ function startPlaying() {
   // démarrer l'animation
   animate(0);
 }
+
+// lire paramètres URL
+// const queryString = window.location.search;
+// console.log(`queryString ${queryString}`);
 
 startPlaying();
