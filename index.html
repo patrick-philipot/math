@@ -12,10 +12,21 @@
   <meta name="apple-mobile-web-app-title" content="Math4Alice" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="stylesheet" href="raven.css">
+  <!-- add Howler.js -->
+  <script src="howler.min.js"></script>
 </head>
 <body>
+  <div id="introDiv" class="center">
+    <button class="button-90" onclick="startGame()">Démarrer</button>
+    
+    <p>Pour réussir, trouve la bonne solution, et clique sur les oiseaux porteurs d'une mauvaise réponse pour les empêcher de sortir de l'écran.</p>
+    
+  </div>
+
+
   <canvas id="collisionCanvas"></canvas>
   <canvas id="canvas1"></canvas>
+
 
   <dialog id="dialWin">
     <H1>Bravo tu as gagné</H1>
@@ -27,7 +38,20 @@
     <h5>Touche <kbd>Esc</kbd> pour fermer</h5>
   </dialog>
 
+  <script src="audio-manager.js"></script>
   <script src="defis2.js"></script>
   <script src="raven.js"></script>
+  <script>
+    function startGame() {
+      console.log('startGame')
+      // hide div.intro
+      const intro = document.getElementById('introDiv');
+      intro.style.setProperty("display", "none");
+      canvas.style.setProperty("display", "block");
+      setupAudio();
+      startPlaying();
+
+    }
+  </script>
 </body>
 </html>

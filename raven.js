@@ -12,6 +12,9 @@ collisionCanvas.width = window.innerWidth;
 collisionCanvas.height = window.innerHeight;
 ctx.font = '50px Impact';
 
+// Background Music
+let AudioIsOff = true
+
 // ID for requestAnimationFrame(animate)
 let myReq;
 // let deltaTime=0
@@ -121,7 +124,10 @@ class Explosion {
   }
   update(deltaTime) {
     //console.log(`deltaTime explosion = ${deltaTime}`);
-    if (this.frame === 0) this.sound.play();
+    if (this.frame === 0) {
+      this.sound.play();
+      // if (AudioIsOff) { AudioIsOff = false ; setupAudio() }
+    }
     this.timeSinceLastFrame += deltaTime;
     if (this.timeSinceLastFrame > this.frameInterval){
       this.frame++;
@@ -255,4 +261,5 @@ function startPlaying() {
 // const queryString = window.location.search;
 // console.log(`queryString ${queryString}`);
 
-startPlaying();
+
+// startPlaying();
