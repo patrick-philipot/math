@@ -83,7 +83,7 @@ dialog {
   border-radius: 1rem;
 }
 
-dialog h5 {
+dialog h5, dialog h1 {
   text-align: center;
 }
 
