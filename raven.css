@@ -20,6 +20,7 @@ canvas, #introDiv {
 
 #introDiv {
   z-index: 9999;
+  font-size: 40px;
 }
 
 .center {
@@ -34,17 +35,16 @@ canvas, #introDiv {
   width: 30%;
   height: 30%;
   padding: 1em;
-  font-size: 80px;
   cursor: pointer;
   text-align: center;
+  font-size: 50px;;
 }
 
 #introDiv > p {
   display : block;
-  font-size: 80px;
   color: white;
   margin: 0.5em 5em;
-  width: 60%;
+  width: 80%;
   text-align: center;
 }
 
