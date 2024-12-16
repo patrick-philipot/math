@@ -200,7 +200,7 @@ function animate(timestamp) {
   current_font = ctx.font;
   ctx.font = '200px Impact';
   ctx.fillStyle = 'white';
-  ctx.fillText(current_defi.text, canvas.width/4, canvas.height/5);  
+  ctx.fillText(current_defi.text, canvas.width/4, canvas.height/4);  
 
   ctx.font = current_font;
   let deltaTime = timestamp - lastTime;
@@ -227,7 +227,7 @@ function animate(timestamp) {
     current_font = ctx.font;
     ctx.font = '200px Impact';
     ctx.fillStyle = 'white';
-    ctx.fillText(current_defi.text+current_defi.solution, canvas.width/4, canvas.height/5);  
+    ctx.fillText(current_defi.text+current_defi.solution, canvas.width/4, canvas.height/4);  
     ctx.font = current_font;
     handleGameOver();
   }
